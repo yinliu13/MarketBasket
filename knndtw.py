@@ -75,7 +75,7 @@ class KnnDtw(object):
         return cost[-1,min_idx], ts_b[min_idx + 1]
   
     def _dist_matrix(self, x, y, d, d_lower_bound):
-        # Compute full distance matrix of dtw distnces between x and y
+        # Compute full distance matrix of dtw dist  ances between x and y
         x_s = np.shape(x)
         y_s = np.shape(y)
         dm = np.inf * np.ones((x_s[0], y_s[0])) 

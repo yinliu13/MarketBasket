@@ -24,4 +24,6 @@ sentences = prior_products.append(train_products).values
 model = gensim.models.Word2Vec(sentences, size=50, window=5, min_count=50, workers=4)
 
 model.save("product2vec.model")
-model.wv.save_word2vec_format("product2vec.model.bin", binary=True)
+model.wv.save_word2vec_format("product2vec.modeltest.bin", binary=True)
+
+
