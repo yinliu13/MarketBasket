@@ -29,15 +29,19 @@ def remove_products_which_are_uncommon(all_baskets, max_num=500):
 
 
 def remove_short_baskets(all_baskets, l_b = 5, l_s = 10):
-    all_baskets_filtered = []
+    large_baskets_filtered = []
+    medium_baskets_filtered = []
+
     for s in all_baskets:
         s_cp = []
         for b in s:
             if len(b) > l_b:
                 s_cp.append(b)
         if len(s_cp) > l_s:
-            all_baskets_filtered.append(s_cp)
-    return all_baskets_filtered
+            large_baskets_filtered.append(s_cp)
+        elif len(s_cp) > 5:
+            medium_baskets_filtered.append(s_cp)
+    return medium_baskets_filtered, large_baskets_filtered
 
 
 def split_data(all_baskets):
